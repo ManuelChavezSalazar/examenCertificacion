@@ -16,6 +16,6 @@
     <link rel="stylesheet" href="<core:url value="/res/css/estilo.css" />">
 </head>
 <body>
-    <h1>${message}</h1>
+    <h1>${mensaje}</h1>
 </body>
 </html>
