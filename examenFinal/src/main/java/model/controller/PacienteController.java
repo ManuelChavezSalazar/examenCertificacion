@@ -1,6 +1,7 @@
 package model.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import model.entity.Paciente;
@@ -20,10 +21,11 @@ public class PacienteController {
         this.pacienteService = pacienteService;
     }
 
-    @GetMapping
-    public ResponseEntity<List<Paciente>> obtenerTodosLosPacientes() {
+    @GetMapping("/listar")
+    public String listarPacientes(Model model) {
         List<Paciente> pacientes = pacienteService.obtenerTodosLosPacientes();
-        return ResponseEntity.ok(pacientes);
+        model.addAttribute("pacientes", pacientes);
+        return "listarPacientes";
     }
 
     @GetMapping("/{id}")
