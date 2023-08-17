@@ -166,11 +166,12 @@
 
         <!-- JUnit Jupiter API -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${org.junit.jupiter-version}</version>
-            <scope>test</scope>
-        </dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-api</artifactId>
+    <version>5.8.1</version> <!-- Asegúrate de usar la versión correcta -->
+    <scope>test</scope>
+</dependency>
+
 
         <!-- Spring Security Core -->
         <dependency>

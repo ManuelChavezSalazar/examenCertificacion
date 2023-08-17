@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/historias-clinicas")
+@RequestMapping("/api/historias")
 public class HistoriaClinicaController {
 
     private final HistoriaClinicaService historiaClinicaService;
@@ -21,12 +21,11 @@ public class HistoriaClinicaController {
         this.historiaClinicaService = historiaClinicaService;
     }
 
-    @GetMapping
-    public ResponseEntity<List<HistoriaClinica>> obtenerTodasLasHistoriasClinicas() {
-        List<HistoriaClinica> historiasClinicas = historiaClinicaService.obtenerTodasLasHistoriasClinicas();
-        return ResponseEntity.ok(historiasClinicas);
+    @GetMapping("/listar")
+    public ResponseEntity<List<HistoriaClinica>> listarHistorias() {
+        List<HistoriaClinica> historias = historiaClinicaService.obtenerTodasLasHistoriasClinicas();
+        return ResponseEntity.ok(historias);
     }
-
     @GetMapping("/{id}")
     public ResponseEntity<HistoriaClinica> obtenerHistoriaClinicaPorId(@PathVariable int id) {
         Optional<HistoriaClinica> historiaClinica = historiaClinicaService.obtenerHistoriaClinicaPorId(id);
